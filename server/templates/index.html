@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>Ai don now</title>
+		<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}">
+	</head>
+	<body>
+		<table>
+			{% for x in range(8) %}
+			<tr id="row{{ x }}">
+				{% for i in range(8) %}
+				<td></td>
+				{% endfor %}
+			</tr>
+			{% endfor %}
+		</table>
+		<script src="{{ url_for('static',filename = 'interaction.js') }}"></script>
+	</body>
+</html>
