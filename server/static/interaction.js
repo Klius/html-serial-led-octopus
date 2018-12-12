@@ -1,4 +1,5 @@
 document.onload=init();
+var matrix = "";
 
 function init(){
 	var cells = document.getElementsByTagName("td");
@@ -16,4 +17,38 @@ function activateCell(cell){
 	else{
 		cell.className = "";
 	}
+	serialize();
+	send();
 }
+
+function serialize(){
+	var cells = document.getElementsByTagName("td");
+	matrix = "";
+	for(i = 0; i < cells.length;i++){
+		if ((i%8 == 0) && (i !=0)){
+			matrix += ","
+		}
+		if (cells[i].className != "active"){
+			matrix += "0";
+		}
+		else{
+			matrix += "1";
+		}
+		
+	}
+	console.log(matrix)
+	send();
+}
+
+function send(url){
+	var xhttp;
+  xhttp=new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log(xhttp.responseText);
+    }
+  };
+  xhttp.open("GET", 'api/0.1/send/?matrix='+matrix, true);
+  xhttp.send();
+}
+
