@@ -15,7 +15,7 @@ class ser(object):
 		msg = ""
 		while msg.find("ready") == -1:
 
-			while ser.inWaiting() == 0:
+			while self.ser.inWaiting() == 0:
 				pass
 
 			msg = recvFromArduino()
@@ -42,5 +42,6 @@ class ser(object):
 		return(ck)
 
 	def sendToArduino(self,str):
+		print(str)
 		b = bytes(str, 'utf-8')
 		self.ser.write(b)

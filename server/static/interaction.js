@@ -36,8 +36,7 @@ function serialize(){
 		}
 		
 	}
-	console.log(matrix)
-	send();
+	matrix += "E";
 }
 
 function send(url){
