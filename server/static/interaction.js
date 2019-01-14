@@ -33,7 +33,6 @@ function serialize(){
 		}
 		
 	}
-	matrix += "E";
 }
 
 function send(url){
