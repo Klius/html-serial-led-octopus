@@ -1,7 +1,7 @@
 from flask import Flask,render_template,request
 import ser
 app = Flask(__name__)
-com = ser.ser('COM3','9600')
+com = ser.ser('/dev/ttyACM0','9600')
 
 
 @app.route('/')
