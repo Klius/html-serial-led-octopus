@@ -11,7 +11,7 @@ def hello_world():
 @app.route('/api/0.1/send/')
 def sendToArduino():
 	matrix = request.args.get('matrix', '')
-	com.sendToArduino(matrix)
+	com.sendToArduino('<matrix,'+matrix+'>')
 	return matrix
 	
 

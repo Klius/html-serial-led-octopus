@@ -25,9 +25,6 @@ function serialize(){
 	var cells = document.getElementsByTagName("td");
 	matrix = "";
 	for(i = 0; i < cells.length;i++){
-		if ((i%8 == 0) && (i !=0)){
-			matrix += ","
-		}
 		if (cells[i].className != "active"){
 			matrix += "0";
 		}
